@@ -34,10 +34,7 @@ HOMEWORK_VERDICTS = {
 
 
 def check_tokens():
-    """
-    Проверяет доступность переменных окружения,
-    которые необходимы для работы программы
-    """
+    """Проверяет доступность необходимых переменных окружения."""
     if not PRACTICUM_TOKEN:
         logger.critical('Не найдена переменная окружения "PRACTICUM_TOKEN".')
         raise ValueError('Не найдена переменная окружения "PRACTICUM_TOKEN".')
@@ -50,7 +47,7 @@ def check_tokens():
 
 
 def send_message(bot, message):
-    """Отправляет сообщение в Telegram-чат"""
+    """Отправляет сообщение в Telegram-чат."""
     try:
         bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=message)
         logger.debug(f'Сообщение "{message}" отправлено.')
